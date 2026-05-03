@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Matthew L. Kelly | Financial Economist</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    /* ── TOKENS ── */
+    :root {
+      --ink:       #0e1117;
+      --paper:     #f5f2eb;
+      --cream:     #ede9df;
+      --gold:      #b08d57;
+      --gold-lt:   #c9aa78;
+      --muted:     #6b6560;
+      --rule:      #d4cfc6;
+      --serif:     'EB Garamond', Georgia, serif;
+      --mono:      'DM Mono', 'Courier New', monospace;
+      --max:       860px;
+    }
+
+    /* ── RESET ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--paper);
+      color: var(--ink);
+      font-family: var(--serif);
+      font-size: 18px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── TEXTURE OVERLAY ── */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* ── LAYOUT ── */
+    .container {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 2rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky;
+      top: 0;
+      background: rgba(245, 242, 235, 0.92);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--rule);
+      z-index: 100;
+      padding: 0.75rem 0;
+    }
+
+    nav .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .nav-name {
+      font-family: var(--serif);
+      font-size: 1rem;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      color: var(--ink);
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+      list-style: none;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--gold); }
+
+    /* ── HERO ── */
+    #hero {
+      padding: 7rem 0 5rem;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .hero-label {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.25rem;
+      opacity: 0;
+      animation: fadeUp 0.6s ease forwards;
+    }
+
+    h1 {
+      font-size: clamp(2.8rem, 6vw, 4.5rem);
+      font-weight: 400;
+      line-height: 1.1;
+      letter-spacing: -0.01em;
+      margin-bottom: 1.5rem;
+      opacity: 0;
+      animation: fadeUp 0.6s ease 0.1s forwards;
+    }
+
+    h1 em {
+      font-style: italic;
+      color: var(--gold);
+    }
+
+    .hero-sub {
+      font-size: 1.15rem;
+      color: var(--muted);
+      max-width: 540px;
+      margin-bottom: 2.5rem;
+      opacity: 0;
+      animation: fadeUp 0.6s ease 0.2s forwards;
+    }
+
+    .hero-links {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      opacity: 0;
+      animation: fadeUp 0.6s ease 0.3s forwards;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.55rem 1.4rem;
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border: 1px solid currentColor;
+      transition: background 0.2s, color 0.2s;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: var(--ink);
+      color: var(--paper);
+      border-color: var(--ink);
+    }
+
+    .btn-primary:hover {
+      background: var(--gold);
+      border-color: var(--gold);
+    }
+
+    .btn-ghost {
+      color: var(--muted);
+      background: transparent;
+    }
+
+    .btn-ghost:hover {
+      color: var(--ink);
+      border-color: var(--ink);
+    }
+
+    /* ── SECTIONS ── */
+    section {
+      padding: 5rem 0;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .section-label {
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 2.5rem;
+    }
+
+    h2 {
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      font-weight: 400;
+      margin-bottom: 1.5rem;
+    }
+
+    h3 {
+      font-size: 1.15rem;
+      font-weight: 500;
+      margin-bottom: 0.3rem;
+    }
+
+    p { margin-bottom: 1em; }
+    p:last-child { margin-bottom: 0; }
+
+    /* ── ABOUT ── */
+    #about .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: start;
+    }
+
+    .about-bio { color: var(--ink); }
+
+    .affiliation-list {
+      list-style: none;
+    }
+
+    .affiliation-list li {
+      padding: 0.8rem 0;
+      border-bottom: 1px solid var(--rule);
+      font-size: 0.95rem;
+    }
+
+    .affiliation-list li:last-child { border-bottom: none; }
+
+    .aff-role {
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gold);
+      display: block;
+    }
+
+    /* ── RESEARCH / PAPERS ── */
+    .paper-list { list-style: none; }
+
+    .paper-item {
+      padding: 1.5rem 0;
+      border-bottom: 1px solid var(--rule);
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 1.2rem;
+      align-items: start;
+    }
+
+    .paper-item:last-child { border-bottom: none; }
+
+    .paper-year {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      color: var(--gold);
+      padding-top: 0.2rem;
+      white-space: nowrap;
+    }
+
+    .paper-title {
+      font-size: 1rem;
+      font-weight: 500;
+      margin-bottom: 0.2rem;
+    }
+
+    .paper-title a {
+      color: var(--ink);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s;
+    }
+
+    .paper-title a:hover { border-color: var(--gold); }
+
+    .paper-meta {
+      font-size: 0.88rem;
+      color: var(--muted);
+      font-style: italic;
+    }
+
+    .paper-tags {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin-top: 0.5rem;
+    }
+
+    .tag {
+      font-family: var(--mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      border: 1px solid var(--rule);
+      padding: 0.1rem 0.5rem;
+    }
+
+    /* ── NOTEBOOKS ── */
+    .notebook-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .notebook-card {
+      background: var(--cream);
+      border: 1px solid var(--rule);
+      padding: 1.4rem;
+      text-decoration: none;
+      color: var(--ink);
+      display: block;
+      transition: border-color 0.2s, transform 0.2s;
+      position: relative;
+    }
+
+    .notebook-card:hover {
+      border-color: var(--gold);
+      transform: translateY(-2px);
+    }
+
+    .notebook-icon {
+      font-family: var(--mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.6rem;
+    }
+
+    .notebook-card h3 {
+      font-size: 0.95rem;
+      font-weight: 500;
+      margin-bottom: 0.4rem;
+    }
+
+    .notebook-card p {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin: 0;
+    }
+
+    /* ── CONTACT ── */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+    }
+
+    .contact-item {
+      padding: 1.2rem 0;
+      border-bottom: 1px solid var(--rule);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .contact-item:last-child { border-bottom: none; }
+
+    .contact-label {
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .contact-value a {
+      font-size: 0.95rem;
+      color: var(--ink);
+      text-decoration: none;
+      border-bottom: 1px solid var(--rule);
+      transition: border-color 0.2s, color 0.2s;
+    }
+
+    .contact-value a:hover {
+      color: var(--gold);
+      border-color: var(--gold);
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      padding: 2.5rem 0;
+    }
+
+    footer .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .footer-copy {
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      color: var(--muted);
+      letter-spacing: 0.06em;
+    }
+
+    .footer-nav {
+      display: flex;
+      gap: 1.25rem;
+      list-style: none;
+    }
+
+    .footer-nav a {
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-nav a:hover { color: var(--gold); }
+
+    /* ── DECORATIVE RULE ── */
+    .ornament {
+      text-align: center;
+      color: var(--gold);
+      font-size: 1.2rem;
+      margin: 2.5rem 0;
+      letter-spacing: 0.4em;
+    }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 640px) {
+      #about .about-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      nav .container { gap: 0.5rem; }
+      .nav-links { gap: 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="container">
+      <a href="#hero" class="nav-name">Matthew L. Kelly</a>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#research">Research</a></li>
+        <li><a href="#notebooks">Code</a></li>
+        <li><a href="#cv">CV</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="container">
+      <p class="hero-label">Financial Economist · Academic Researcher</p>
+      <h1>Matthew L. Kelly</h1>
+      <p class="hero-sub">
+        Assistant Professor of Finance at Campbell University.
+        My research focuses on asset pricing, banking, regulatory policy and liberal politial economy. 
+      </p>
+      <div class="hero-links">
+        <a href="#research" class="btn btn-primary">View Research</a>
+        <a href="MLK CV 11.pdf" class="btn btn-ghost" target="_blank">Download CV</a>
+        <a href="https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=3012573" class="btn btn-ghost" target="_blank">SSRN Profile</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="container">
+      <p class="section-label reveal">About</p>
+      <div class="about-grid reveal">
+        <div class="about-bio">
+          <h2>Research &amp; Background</h2>
+          <p>
+            I am a financial economist specializing in asset pricing, public finance, and the theory and history of classical liberalism.
+          </p>
+          <p>
+            Before joining Campbell University, I completed my Ph.D. in Finance at the University of Texas at Dallas. Before that,
+            I graduated from The Florida State University with a Bachelor’s of Science in Economics, then worked as a public policy 
+            analyst at the DeVoe L. Moore Center at Florida State’s College of Social Sciences. In that role, I was fortunate 
+            to write about a wide variety of state, local, and national issues related to taxes, regulation, and economic liberty. 
+            I then worked as a writer and researcher for the Colloquium for the 
+            Advancement of Free Enterprise Education in the Jindal School of Management at The University of Texas at Dallas. While 
+            pursuing my doctoral studies, I was awarded the Adam Smith and Oskar Morgenstern Fellowships from the Mercatus Center 
+            at George Mason University.
+          </p>
+          <p>
+            I teach courses in Corporate Finance, Financial Case Studies, Commercial Banking, Advanced Investment Analysis, Microeconomics,
+            Macroeconomics, and Econometrics at the graduate and undergraduate levels.
+          </p>
+        </div>
+        <div>
+          <ul class="affiliation-list">
+            <li>
+              <span class="aff-role">Position</span>
+              Assistant Professor of Finance
+            </li>
+            <li>
+              <span class="aff-role">Institution</span>
+              Campbell University, Department of Accounting and Finance
+            </li>
+            <li>
+              <span class="aff-role">Ph.D.</span>
+              University of Texas at Dallas, 2024
+            </li>
+            <li>
+              <span class="aff-role">Fields</span>
+              Asset Pricing, economics of inventory, quantum economics and finance
+            </li>
+            <li>
+              <span class="aff-role">Email</span>
+              <a href="mailto:mkelly@campbell.edu" style="color:var(--ink);text-decoration:none;border-bottom:1px solid var(--rule)">mkelly@campbell.edu</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESEARCH -->
+  <section id="research">
+    <div class="container">
+      <p class="section-label reveal">Research</p>
+      <h2 class="reveal">Published Work &amp; Working Papers</h2>
+
+      <ul class="paper-list">
+      </ul>
+
+      <div class="ornament reveal">— ✦ —</div>
+
+      <p class="reveal" style="text-align:center;">
+        <a href="https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=YOURID" class="btn btn-ghost" target="_blank">View All Papers on SSRN</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- NOTEBOOKS / CODE -->
+  <section id="notebooks">
+    <div class="container">
+      <p class="section-label reveal">Code &amp; Notebooks</p>
+      <h2 class="reveal">Research Code &amp; Jupyter Notebooks</h2>
+      <p class="reveal" style="color:var(--muted);margin-bottom:2.5rem;max-width:560px;">
+        Replication code and research notebooks hosted on GitHub.
+        All notebooks are written in Python and are self-contained.
+      </p>
+
+      <div class="notebook-grid">
+
+        <a href="https://github.com/Finguy1234/usda_fcic/blob/main/fcic_tutorial.ipynb" class="notebook-card reveal" target="_blank">
+          <p class="notebook-icon">&#x2462; Jupyter Notebook</p>
+          <h3> Agricultural Insurance Data Tutorial </h3>
+          <p> Explore and analyze data from the Federal Crop Insurance Corporation's Risk Management Agency </p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CV -->
+  <section id="cv">
+    <div class="container">
+      <p class="section-label reveal">Curriculum Vitae</p>
+      <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:2rem;flex-wrap:wrap;">
+        <div class="reveal">
+          <h2>Download CV</h2>
+          <p style="color:var(--muted);max-width:480px;">
+            My full curriculum vitae includes employment history, publications,
+            conference presentations, teaching experience, and service. Last updated May 2026.
+          </p>
+          <br/>
+          <a href="MLK CV 11.pdf" class="btn btn-primary" target="_blank">Download CV (pdf)</a>
+        </div>
+        <div class="reveal" style="min-width:220px;">
+          <ul class="affiliation-list">
+            <li>
+              <span class="aff-role">Last Updated</span>
+              May 2026
+            </li>
+            <li>
+              <span class="aff-role">Format</span>
+              PDF, 3 pages
+            </li>
+            <li>
+              <span class="aff-role">Includes</span>
+              Publications · Grants · Teaching
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="container">
+      <p class="section-label reveal">Contact</p>
+      <h2 class="reveal">Get in Touch</h2>
+      <div class="contact-grid reveal">
+        <div>
+          <div class="contact-item">
+            <span class="contact-label">Email</span>
+            <span class="contact-value"><a href="mailto:mkelly@campbell.edu">mkelly@campbell.edu</a></span>
+          </div>
+          <div class="contact-item">
+            <span class="contact-label">SSRN</span>
+            <span class="contact-value"><a href="https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=3012573" target="_blank">Author Profile</a></span>
+          </div>
+          <div class="contact-item">
+            <span class="contact-label">GitHub</span>
+            <span class="contact-value"><a href="https://github.com/Finguy1234" target="_blank">@Finguy1234</a></span>
+          </div>
+        </div>
+        <div>
+          <div class="contact-item">
+            <span class="contact-label">Campbell Website</span>
+            <span class="contact-value"><a href="https://directory.campbell.edu/people/dr-matthew-kelly/">Campbell University Website</a></span>
+          </div>
+          <div class="contact-item">
+            <span class="contact-label">LinkedIn</span>
+            <span class="contact-value"><a href="https://www.linkedin.com/in/matthew-kelly-39a02aa0" target="_blank">LinkedIn Profile</a></span>
+          </div>
+          <div class="contact-item">
+            <span class="contact-label">Substack </span>
+            <span class="contact-value"><a href="https://substack.com/@matthewlkelly" target="_blank">@matthewlkelly</a></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <p class="footer-copy">© <span id="year"></span> Matthew L. Kelly · Financial Economist</p>
+      <ul class="footer-nav">
+        <li><a href="#about">About</a></li>
+        <li><a href="#research">Research</a></li>
+        <li><a href="#notebooks">Code</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script>
+    // Current year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Scroll reveal
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          // Stagger siblings slightly
+          const delay = (i % 4) * 80;
+          setTimeout(() => entry.target.classList.add('visible'), delay);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.08 });
+
+    reveals.forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
