@@ -596,7 +596,7 @@ If expected inflation rises by 1 percentage point, nominal interest rates should
 
 Formally:
 
-\Delta i \approx \Delta \mathbb{E}[\pi]
+$\Delta i \approx \Delta \mathbb{E}[\pi]$
 
 if the real rate ( r ) is constant.
 
@@ -614,37 +614,25 @@ In practice, real rates are not always constant. They vary with productivity, ti
 
 Suppose an asset earns returns:
 
-[
-R_1, R_2, \ldots, R_T
-]
+$R_1, R_2, \ldots, R_T$
 
 The arithmetic average return is:
 
-[
-\bar{R}*A = \frac{1}{T}\sum*{t=1}^T R_t
-]
+$\bar{R}*A = \frac{1}{T}\sum*{t=1}^T R_t$
 
 Example:
 
 Suppose returns over three years are:
 
-[
-20%, -10%, 15%
-]
+$20%, -10%, 15%$
 
 The arithmetic average is:
 
-[
-\bar{R}_A = \frac{0.20 - 0.10 + 0.15}{3}
-]
+$\bar{R}_A = \frac{0.20 - 0.10 + 0.15}{3}$
 
-[
-\bar{R}_A = \frac{0.25}{3}
-]
+$\bar{R}_A = \frac{0.25}{3}$
 
-[
-\bar{R}_A = 0.0833 = 8.33%
-]
+$\bar{R}_A = 0.0833 = 8.33%$
 
 The arithmetic average is the appropriate estimate of the expected one-period return if each historical return is treated as an equally likely future outcome.
 
@@ -660,35 +648,25 @@ The geometric average return measures the constant per-period return that would 
 
 The formula is:
 
-[
-\bar{R}*G =
+$\bar{R}*G =
 \left[
 \prod*{t=1}^T (1+R_t)
 \right]^{1/T}
--1
-]
+-1$
 
 For the same returns:
 
-[
-20%, -10%, 15%
-]
+$20%, -10%, 15%$
 
 we calculate:
 
-[
-\bar{R}_G =
-[(1.20)(0.90)(1.15)]^{1/3} - 1
-]
+$\bar{R}_G =
+[(1.20)(0.90)(1.15)]^{1/3} - 1$
 
-[
-\bar{R}_G =
-[1.242]^{1/3} - 1
-]
+$\bar{R}_G =
+[1.242]^{1/3} - 1$
 
-[
-\bar{R}_G \approx 0.0750 = 7.50%
-]
+$\bar{R}_G \approx 0.0750 = 7.50%$
 
 The geometric average is lower than the arithmetic average when returns are volatile.
 
@@ -696,31 +674,21 @@ That is because losses require larger subsequent gains to recover.
 
 For example, a 50% loss followed by a 50% gain does not break even:
 
-[
-100 \rightarrow 50 \rightarrow 75
-]
+$100 \rightarrow 50 \rightarrow 75$
 
 The arithmetic average is:
 
-[
-\frac{-50% + 50%}{2} = 0%
-]
+$\frac{-50% + 50%}{2} = 0%$
 
 But the investor lost 25% of wealth.
 
 The geometric return is:
 
-[
-[(0.5)(1.5)]^{1/2} - 1
-]
+$[(0.5)(1.5)]^{1/2} - 1$
 
-[
-= (0.75)^{1/2} - 1
-]
+$= (0.75)^{1/2} - 1$
 
-[
-\approx -13.4%
-]
+$\approx -13.4%$
 
 The geometric average answers:
 
@@ -738,9 +706,7 @@ Suppose there are ( N ) possible states of the world. State ( s ) occurs with pr
 
 The expected return is:
 
-[
-\mathbb{E}[R] = \sum_{s=1}^N p_s R_s
-]
+$\mathbb{E}[R] = \sum_{s=1}^N p_s R_s$
 
 Example:
 
@@ -752,27 +718,18 @@ Example:
 
 Then:
 
-[
-\mathbb{E}[R]
-=============
 
+$\mathbb{E}[R]=
 0.25(0.20)
 +
 0.50(0.08)
 +
-0.25(-0.10)
-]
+0.25(-0.10)$
 
-[
-\mathbb{E}[R]
-=============
+$\mathbb{E}[R]=
+0.05 + 0.04 - 0.025$
 
-0.05 + 0.04 - 0.025
-]
-
-[
-\mathbb{E}[R] = 0.065 = 6.5%
-]
+$\mathbb{E}[R] = 0.065 = 6.5%$
 
 The expected return is not necessarily the return that will occur. It is the probability-weighted mean of the distribution.
 
@@ -784,24 +741,16 @@ Variance measures the average squared deviation of returns from their expected v
 
 For a probability distribution:
 
-[
-\sigma^2 = \operatorname{Var}(R)
-================================
-
-\sum_{s=1}^N p_s (R_s - \mathbb{E}[R])^2
-]
+$\sigma^2 = \operatorname{Var}(R)=
+\sum_{s=1}^N p_s (R_s - \mathbb{E}[R])^2$
 
 Standard deviation is the square root of variance:
 
-[
-\sigma = \sqrt{\operatorname{Var}(R)}
-]
+$\sigma = \sqrt{\operatorname{Var}(R)}$
 
 Using the previous example:
 
-[
-\mathbb{E}[R] = 6.5%
-]
+$\mathbb{E}[R] = 6.5%$
 
 The deviations are:
 
@@ -811,48 +760,30 @@ The deviations are:
 
 The variance is:
 
-[
-\sigma^2
-========
-
+$\sigma^2=
 0.25(0.135)^2
 +
 0.50(0.015)^2
 +
-0.25(-0.165)^2
-]
+0.25(-0.165)^2$
 
-[
-\sigma^2
-========
-
+\sigma^2=
 0.25(0.018225)
 +
 0.50(0.000225)
 +
-0.25(0.027225)
-]
+0.25(0.027225)$
 
-[
-\sigma^2
-========
+$\sigma^2=
+0.00455625 + 0.0001125 + 0.00680625$
 
-0.00455625 + 0.0001125 + 0.00680625
-]
-
-[
-\sigma^2 = 0.011475
-]
+$\sigma^2 = 0.011475$
 
 The standard deviation is:
 
-[
-\sigma = \sqrt{0.011475}
-]
+$\sigma = \sqrt{0.011475}$
 
-[
-\sigma \approx 0.1071 = 10.71%
-]
+$\sigma \approx 0.1071 = 10.71%$
 
 Standard deviation is useful because it is measured in the same units as returns.
 
@@ -886,17 +817,13 @@ Examples:
 
 The population skewness is:
 
-[
-\text{Skewness}
-===============
-
+$\text{Skewness}=
 \mathbb{E}
 \left[
 \left(
 \frac{R - \mu}{\sigma}
 \right)^3
-\right]
-]
+\right]$
 
 where:
 
@@ -917,25 +844,19 @@ A strategy that earns small steady gains and occasionally crashes may have high 
 
 The population kurtosis is:
 
-[
-\text{Kurtosis}
-===============
-
+$\text{Kurtosis}=
 \mathbb{E}
 \left[
 \left(
 \frac{R - \mu}{\sigma}
 \right)^4
-\right]
-]
+\right]$
 
 A normal distribution has kurtosis equal to 3.
 
 Excess kurtosis is:
 
-[
-\text{Excess kurtosis} = \text{Kurtosis} - 3
-]
+$\text{Excess kurtosis} = \text{Kurtosis} - 3$
 
 High excess kurtosis means the distribution has fat tails. Extreme observations occur more often than they would under a normal distribution.
 
@@ -953,15 +874,11 @@ An investor does not care only about the expected return of an asset. The invest
 
 Recall the asset-pricing condition:
 
-[
-1 = \mathbb{E}[M R]
-]
+$1 = \mathbb{E}[M R]$
 
 Using covariance:
 
-[
-1 = \mathbb{E}[M]\mathbb{E}[R] + \operatorname{Cov}(M,R)
-]
+$1 = \mathbb{E}[M]\mathbb{E}[R] + \operatorname{Cov}(M,R)$
 
 This equation connects probability directly to equilibrium expected returns.
 
@@ -1011,29 +928,16 @@ Gross returns are:
 
 Compute:
 
-[
-\mathbb{E}[M R_A]
-=================
-
+$\mathbb{E}[M R_A]=
 0.5(0.80)(1.20)
 +
-0.5(1.20)(0.95)
-]
+0.5(1.20)(0.95)$
 
-# [
-
-0.48 + 0.57
-]
-
-[
-= 1.05
-]
+$0.48 + 0.57= 1.05$
 
 If ( \mathbb{E}[MR] > 1 ), the asset is too cheap relative to equilibrium, or its expected return is too high for its risk. In equilibrium, its price would be bid up until:
 
-[
-\mathbb{E}[MR] = 1
-]
+$\mathbb{E}[MR] = 1$
 
 The important point is that this asset pays more in good states and less in bad states. That makes it risky in the economically relevant sense.
 
@@ -1053,23 +957,12 @@ Gross returns:
 
 Compute:
 
-[
-\mathbb{E}[M R_B]
-=================
-
+$\mathbb{E}[M R_B]=
 0.5(0.80)(1.00)
 +
-0.5(1.20)(1.10)
-]
+0.5(1.20)(1.10)$
 
-# [
-
-0.40 + 0.66
-]
-
-[
-= 1.06
-]
+$0.40 + 0.66= 1.06$
 
 This asset is valuable because it pays well when the stochastic discount factor is high. Investors would accept a relatively low expected return on this asset because it provides insurance.
 
@@ -1087,21 +980,15 @@ Suppose an investment earns a pre-tax return ( R ), and the tax rate on the retu
 
 If the entire return is taxed at rate ( \tau ), then the after-tax return is:
 
-[
-R_{\text{after-tax}} = R(1-\tau)
-]
+$R_{\text{after-tax}} = R(1-\tau)$
 
 Example:
 
 If the pre-tax return is 10% and the tax rate is 25%, then:
 
-[
-R_{\text{after-tax}} = 0.10(1-0.25)
-]
+$R_{\text{after-tax}} = 0.10(1-0.25)$
 
-[
-R_{\text{after-tax}} = 0.075 = 7.5%
-]
+$R_{\text{after-tax}} = 0.075 = 7.5%$
 
 But actual taxation is more complicated because different components of return may be taxed differently.
 
@@ -1109,9 +996,7 @@ For stocks, the income component may be dividends, and the capital gain componen
 
 The total pre-tax return is:
 
-[
-R = \frac{D_1}{P_0} + \frac{P_1 - P_0}{P_0}
-]
+$R = \frac{D_1}{P_0} + \frac{P_1 - P_0}{P_0}$
 
 Let:
 
@@ -1120,14 +1005,10 @@ Let:
 
 Then the after-tax return is:
 
-[
-R_{\text{after-tax}}
-====================
-
+$R_{\text{after-tax}}=
 \frac{D_1(1-\tau_D)}{P_0}
 +
-\frac{(P_1-P_0)(1-\tau_G)}{P_0}
-]
+\frac{(P_1-P_0)(1-\tau_G)}{P_0}$
 
 if the capital gain is realized immediately.
 
@@ -1137,31 +1018,21 @@ A stock is purchased for ( $100 ), pays a ( $4 ) dividend, and is sold for ( $11
 
 Pre-tax return:
 
-[
-R = \frac{4}{100} + \frac{110-100}{100}
-]
+$R = \frac{4}{100} + \frac{110-100}{100}$
 
-[
-R = 4% + 10% = 14%
-]
+$R = 4% + 10% = 14%$
 
 After-tax dividend return:
 
-[
-\frac{4(1-0.20)}{100} = \frac{3.20}{100} = 3.2%
-]
+$\frac{4(1-0.20)}{100} = \frac{3.20}{100} = 3.2%$
 
 After-tax capital gain return:
 
-[
-\frac{10(1-0.15)}{100} = \frac{8.50}{100} = 8.5%
-]
+$\frac{10(1-0.15)}{100} = \frac{8.50}{100} = 8.5%$
 
 Total after-tax return:
 
-[
-R_{\text{after-tax}} = 3.2% + 8.5% = 11.7%
-]
+$R_{\text{after-tax}} = 3.2% + 8.5% = 11.7%$
 
 Taxes reduce the investor’s realized return and can change preferences across securities.
 
@@ -1191,57 +1062,39 @@ Investment B compounds tax-free for 10 years, with tax paid only at the end.
 
 The after-tax annual return is:
 
-[
-0.08(1-0.25) = 0.06
-]
+$0.08(1-0.25) = 0.06$
 
 A ( $10,000 ) investment grows to:
 
-[
-FV_A = 10{,}000(1.06)^{10}
-]
+$FV_A = 10{,}000(1.06)^{10}$
 
-[
-FV_A \approx 17{,}908
-]
+$FV_A \approx 17{,}908$
 
 ### Investment B: Tax Deferred
 
 Before tax, the investment grows to:
 
-[
-10{,}000(1.08)^{10}
-]
+$10{,}000(1.08)^{10}$
 
-[
-\approx 21{,}589
-]
+$\approx 21{,}589$
 
 The gain is:
 
-[
-21{,}589 - 10{,}000 = 11{,}589
-]
+$21{,}589 - 10{,}000 = 11{,}589$
 
 Tax on the gain at 25% is:
 
-[
-0.25(11{,}589) = 2{,}897
-]
+$0.25(11{,}589) = 2{,}897$
 
 After-tax ending wealth is:
 
-[
-21{,}589 - 2{,}897 = 18{,}692
-]
+$21{,}589 - 2{,}897 = 18{,}692$
 
 Tax deferral creates value because pre-tax dollars compound for longer.
 
 Investment B leaves the investor with:
 
-[
-18{,}692 - 17{,}908 = 784
-]
+$18{,}692 - 17{,}908 = 784$
 
 more after 10 years.
 
@@ -1257,36 +1110,23 @@ Investment analysis is not just the calculation of historical returns. It is a u
 
 The firm produces profits:
 
-[
-\pi = Pq - C(q)
-]
+$\pi = Pq - C(q)$
 
 Investors value those profits:
 
-[
-E_0 = \mathbb{E}[M_1 \pi_1]
-]
+$E_0 = \mathbb{E}[M_1 \pi_1]$
 
 The stochastic discount factor comes from intertemporal marginal rates of substitution:
 
-[
-M_1 = \beta \frac{u'(C_1)}{u'(C_0)}
-]
+$M_1 = \beta \frac{u'(C_1)}{u'(C_0)}$
 
 Expected returns satisfy:
 
-[
-1 = \mathbb{E}[M R]
-]
+$1 = \mathbb{E}[M R]$
 
 Risk premia are determined by covariance with the stochastic discount factor:
 
-[
-\mathbb{E}[R] - R_f
-===================
-
--R_f \operatorname{Cov}(M,R)
-]
+$\mathbb{E}[R] - R_f=-R_f \operatorname{Cov}(M,R)$
 
 The firm’s cost of equity is the expected return investors require to hold the firm’s risky profits.
 
@@ -1294,9 +1134,7 @@ That cost of equity becomes a hurdle rate for capital budgeting.
 
 Return measurement then tells us how to describe realized investment performance:
 
-[
-R = \frac{D_1}{P_0} + \frac{P_1-P_0}{P_0}
-]
+$R = \frac{D_1}{P_0} + \frac{P_1-P_0}{P_0}$
 
 Compounding tells us how returns accumulate through time.
 
@@ -1319,102 +1157,69 @@ But the most important risk concept is not volatility by itself. It is whether t
 
 1. **Total return equals income return plus capital gain return.**
 
-[
-R = \frac{D_1}{P_0} + \frac{P_1-P_0}{P_0}
-]
+$R = \frac{D_1}{P_0} + \frac{P_1-P_0}{P_0}$
 
 2. **Holding-period returns measure actual performance over the investor’s holding period.**
 
-[
-HPR = \frac{P_1 + D_1 - P_0}{P_0}
-]
+$HPR = \frac{P_1 + D_1 - P_0}{P_0}$
 
 3. **APR is a quoted rate; EAR is the true annual rate after compounding.**
 
-[
-EAR = \left(1+\frac{APR}{m}\right)^m - 1
-]
+$EAR = \left(1+\frac{APR}{m}\right)^m - 1$
 
 4. **Continuous compounding uses the exponential function.**
 
-[
-FV = PV e^{rT}
-]
+$FV = PV e^{rT}$
 
 5. **Real returns adjust nominal returns for inflation.**
 
-[
-1+i = (1+r)(1+\pi)
-]
+$1+i = (1+r)(1+\pi)$
 
 6. **The Fisher equation links nominal rates, real rates, and expected inflation.**
 
-[
-i \approx r + \mathbb{E}[\pi]
-]
+$i \approx r + \mathbb{E}[\pi]$
 
 7. **Arithmetic average returns estimate a typical one-period return.**
 
-[
-\bar{R}*A = \frac{1}{T}\sum*{t=1}^T R_t
-]
+$\bar{R}*A = \frac{1}{T}\sum*{t=1}^T R_t$
 
 8. **Geometric average returns measure compound growth.**
 
-[
-\bar{R}*G =
+$\bar{R}*G =
 \left[
 \prod*{t=1}^T(1+R_t)
 \right]^{1/T}
--1
-]
+-1$
 
 9. **Variance and standard deviation measure dispersion.**
 
-[
-\sigma^2 = \mathbb{E}[(R-\mu)^2]
-]
+$\sigma^2 = \mathbb{E}[(R-\mu)^2]$
 
 10. **Skewness and kurtosis describe asymmetry and tail risk.**
 
-[
-\text{Skewness}
-===============
-
+$\text{Skewness}=
 \mathbb{E}
 \left[
 \left(
 \frac{R-\mu}{\sigma}
 \right)^3
-\right]
-]
+\right]$
 
-[
-\text{Kurtosis}
-===============
-
+$\text{Kurtosis}=
 \mathbb{E}
 \left[
 \left(
 \frac{R-\mu}{\sigma}
 \right)^4
-\right]
-]
+\right]$
 
 11. **The stochastic discount factor prices assets.**
 
-[
-P = \mathbb{E}[MX]
-]
+$P = \mathbb{E}[MX]$
 
 12. **Expected returns compensate investors for covariance with the SDF.**
 
-[
-\mathbb{E}[R] - R_f
-===================
-
--R_f \operatorname{Cov}(M,R)
-]
+$\mathbb{E}[R] - R_f=-R_f \operatorname{Cov}(M,R)$
 
 13. **The firm’s cost of equity is the expected return required by investors.**
 
