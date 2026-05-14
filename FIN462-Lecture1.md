@@ -26,9 +26,7 @@ Let the firm produce output ( q ). The market price of output is ( P ). Because 
 
 The firm has a cost function:
 
-[
-C(q)
-]
+$C(q)$
 
 Profit is:
 
