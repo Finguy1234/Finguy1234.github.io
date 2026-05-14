@@ -30,35 +30,25 @@ $C(q)$
 
 Profit is:
 
-[
-\pi(q) = Pq - C(q)
-]
+$\pi(q) = Pq - C(q)$
 
 The firm chooses output to maximize profit:
 
-[
-\max_q ; Pq - C(q)
-]
+$\max_q ; Pq - C(q)$
 
 The first-order condition is:
 
-[
-P = C'(q)
-]
+$P = C'(q)$
 
 That is:
 
-[
-P = MC(q)
-]
+$P = MC(q)$
 
 The competitive firm produces until price equals marginal cost.
 
 Total profit at the optimal output ( q^* ) is:
 
-[
-\pi^* = Pq^* - C(q^*)
-]
+$\pi^* = Pq^* - C(q^*)$
 
 Graphically, if price exceeds average total cost, the firm earns positive economic profit. If price equals average total cost, profit is zero. If price is below average total cost but above average variable cost, the firm may operate in the short run while losing money.
 
@@ -74,29 +64,21 @@ At date ( t=1 ), the firm produces, sells output, pays costs, and distributes pr
 
 Let the firm’s date-1 profit be:
 
-[
-\pi_1
-]
+$\pi_1$
 
 If the relevant required return is ( r ), then the date-0 market value of equity is:
 
-[
-E_0 = \frac{\pi_1}{1+r}
-]
+$E_0 = \frac{\pi_1}{1+r}$
 
 If date-1 profit is uncertain, the expression becomes:
 
-[
-E_0 = \frac{\mathbb{E}_0[\pi_1]}{1+r}
-]
+$E_0 = \frac{\mathbb{E}_0[\pi_1]}{1+r}$
 
 but that formulation is incomplete unless the profit is riskless. For risky profit, the correct valuation is not simply expected profit divided by a single risk-free discount rate. Risk matters.
 
 The more general valuation formula is:
 
-[
-E_0 = \mathbb{E}_0[M_1 \pi_1]
-]
+$E_0 = \mathbb{E}_0[M_1 \pi_1]$
 
 where ( M_1 ) is the **stochastic discount factor**.
 
@@ -112,9 +94,7 @@ That is the central microfoundation of investment analysis.
 
 In a basic finance class, we often write:
 
-[
-PV = \frac{CF_1}{1+r}
-]
+$PV = \frac{CF_1}{1+r}$
 
 But this leaves open a deeper question:
 
@@ -138,9 +118,7 @@ At date ( t=1 ), the tree produces a random dividend ( D_1 ), and the investor c
 
 The investor has expected lifetime utility:
 
-[
-U = u(C_0) + \beta \mathbb{E}_0[u(C_1)]
-]
+$U = u(C_0) + \beta \mathbb{E}_0[u(C_1)]$
 
 where:
 
@@ -155,27 +133,19 @@ Suppose the investor can buy an asset with price ( P_0 ) that pays payoff ( X_1 
 
 The investor chooses how much of the asset to buy. The first-order condition implies:
 
-[
-P_0 u'(C_0) = \beta \mathbb{E}_0[u'(C_1) X_1]
-]
+$P_0 u'(C_0) = \beta \mathbb{E}_0[u'(C_1) X_1]$
 
 Divide both sides by ( u'(C_0) ):
 
-[
-P_0 = \mathbb{E}_0 \left[ \beta \frac{u'(C_1)}{u'(C_0)} X_1 \right]
-]
+$P_0 = \mathbb{E}_0 \left[ \beta \frac{u'(C_1)}{u'(C_0)} X_1 \right]$
 
 Define the stochastic discount factor:
 
-[
-M_1 = \beta \frac{u'(C_1)}{u'(C_0)}
-]
+$M_1 = \beta \frac{u'(C_1)}{u'(C_0)}$
 
 Then:
 
-[
-P_0 = \mathbb{E}_0[M_1 X_1]
-]
+$P_0 = \mathbb{E}_0[M_1 X_1]$
 
 This is the fundamental asset-pricing equation.
 
@@ -185,9 +155,7 @@ This is the fundamental asset-pricing equation.
 
 The stochastic discount factor is:
 
-[
-M_1 = \beta \frac{u'(C_1)}{u'(C_0)}
-]
+$M_1 = \beta \frac{u'(C_1)}{u'(C_0)}$
 
 It is high when future marginal utility is high.
 
@@ -205,69 +173,47 @@ This is why risk is not merely variance. What matters is **covariance with margi
 
 Let an asset have price ( P_0 ) and payoff ( X_1 ). Its gross return is:
 
-[
-R_1 = \frac{X_1}{P_0}
-]
+$R_1 = \frac{X_1}{P_0}$
 
 Using:
 
-[
-P_0 = \mathbb{E}_0[M_1 X_1]
-]
+$P_0 = \mathbb{E}_0[M_1 X_1]$
 
 divide both sides by ( P_0 ):
 
-[
-1 = \mathbb{E}_0[M_1 R_1]
-]
+$1 = \mathbb{E}_0[M_1 R_1]$
 
 This is the central return-pricing equation:
 
-[
-\boxed{1 = \mathbb{E}_0[M_1 R_1]}
-]
+$\boxed{1 = \mathbb{E}_0[M_1 R_1]}$
 
 Using the identity:
 
-[
-\mathbb{E}[MR] = \mathbb{E}[M]\mathbb{E}[R] + \operatorname{Cov}(M,R)
-]
+$\mathbb{E}[MR] = \mathbb{E}[M]\mathbb{E}[R] + \operatorname{Cov}(M,R)$
 
 we get:
 
-[
-1 = \mathbb{E}[M]\mathbb{E}[R] + \operatorname{Cov}(M,R)
-]
+$1 = \mathbb{E}[M]\mathbb{E}[R] + \operatorname{Cov}(M,R)$
 
 So:
 
-[
-\mathbb{E}[R] = \frac{1 - \operatorname{Cov}(M,R)}{\mathbb{E}[M]}
-]
+$\mathbb{E}[R] = \frac{1 - \operatorname{Cov}(M,R)}{\mathbb{E}[M]}$
 
 For the risk-free asset, ( R_f ) is known in advance. Therefore:
 
-[
-1 = \mathbb{E}[M]R_f
-]
+$1 = \mathbb{E}[M]R_f$
 
 so:
 
-[
-R_f = \frac{1}{\mathbb{E}[M]}
-]
+$R_f = \frac{1}{\mathbb{E}[M]}$
 
 Substitute into the expected return equation:
 
-[
-\mathbb{E}[R] = R_f - R_f \operatorname{Cov}(M,R)
-]
+$\mathbb{E}[R] = R_f - R_f \operatorname{Cov}(M,R)$
 
 Therefore, the expected excess return is:
 
-[
-\mathbb{E}[R] - R_f = -R_f \operatorname{Cov}(M,R)
-]
+$\mathbb{E}[R] - R_f = -R_f \operatorname{Cov}(M,R)$
 
 This is one of the most important results in asset pricing.
 
@@ -281,21 +227,15 @@ If an asset has a **positive covariance** with the stochastic discount factor, i
 
 A firm’s equity is a claim on its future profits:
 
-[
-X_1 = \pi_1
-]
+$X_1 = \pi_1$
 
 Therefore:
 
-[
-E_0 = \mathbb{E}_0[M_1 \pi_1]
-]
+$E_0 = \mathbb{E}_0[M_1 \pi_1]$
 
 The expected return on the firm’s equity is:
 
-[
-\mathbb{E}[R_E]
-]
+$\mathbb{E}[R_E]$
 
 This expected return is the firm’s **cost of equity**.
 
@@ -319,27 +259,19 @@ The project costs ( I_0 ) today and produces expected future cash flow ( CF_1 ).
 
 The project should be accepted if its net present value is positive:
 
-[
-NPV = -I_0 + PV(CF_1)
-]
+$NPV = -I_0 + PV(CF_1)$
 
 If the project has the same risk as the firm’s existing equity, then the firm may discount using its cost of equity:
 
-[
-NPV = -I_0 + \frac{\mathbb{E}[CF_1]}{1+r_E}
-]
+$NPV = -I_0 + \frac{\mathbb{E}[CF_1]}{1+r_E}$
 
 Accept the project if:
 
-[
-NPV > 0
-]
+$NPV > 0$
 
 Equivalently, accept if the project’s expected return exceeds the cost of equity:
 
-[
-\mathbb{E}[R_{\text{project}}] > r_E
-]
+$\mathbb{E}[R_{\text{project}}] > r_E$
 
 The cost of equity is therefore a **hurdle rate**.
 
@@ -347,9 +279,7 @@ However, the correct hurdle rate depends on project risk, not merely firm identi
 
 The theoretically correct valuation is:
 
-[
-PV = \mathbb{E}[M_1 CF_1]
-]
+$PV = \mathbb{E}[M_1 CF_1]$
 
 The common textbook discount-rate approach is a simplified version of this deeper principle.
 
@@ -368,40 +298,23 @@ Suppose an asset has initial price ( P_0 ), ending price ( P_1 ), and pays incom
 
 The holding-period return is:
 
-[
-R = \frac{P_1 + D_1 - P_0}{P_0}
-]
+$R = \frac{P_1 + D_1 - P_0}{P_0}$
 
 This can be decomposed as:
 
-[
-R = \frac{D_1}{P_0} + \frac{P_1 - P_0}{P_0}
-]
+$R = \frac{D_1}{P_0} + \frac{P_1 - P_0}{P_0}$
 
 The first term is the income component:
 
-[
-\frac{D_1}{P_0}
-]
+$\frac{D_1}{P_0}$
 
 The second term is the capital gain component:
 
-[
-\frac{P_1 - P_0}{P_0}
-]
+$\frac{P_1 - P_0}{P_0}$
 
 So:
 
-[
-\boxed{
-\text{Total return}
-===================
-
-\text{Income return}
-+
-\text{Capital gain return}
-}
-]
+$\boxed{\text{Total return}= \text{Income return} + \text{Capital gain return}}$
 
 Example:
 
@@ -409,21 +322,15 @@ A stock begins the year at ( $100 ), pays a ( $3 ) dividend, and ends the year a
 
 The income return is:
 
-[
-\frac{3}{100} = 0.03 = 3%
-]
+$\frac{3}{100} = 0.03 = 3%$
 
 The capital gain return is:
 
-[
-\frac{108-100}{100} = 0.08 = 8%
-]
+$\frac{108-100}{100} = 0.08 = 8%$
 
 The total return is:
 
-[
-0.03 + 0.08 = 0.11 = 11%
-]
+$0.03 + 0.08 = 0.11 = 11%$
 
 ---
 
@@ -433,31 +340,21 @@ A **holding-period return** is the return earned over the actual period during w
 
 The formula is:
 
-[
-HPR = \frac{\text{Ending value} + \text{Income} - \text{Beginning value}}{\text{Beginning value}}
-]
+$HPR = \frac{\text{Ending value} + \text{Income} - \text{Beginning value}}{\text{Beginning value}}$
 
 Or, as a gross return:
 
-[
-1+HPR = \frac{\text{Ending value} + \text{Income}}{\text{Beginning value}}
-]
+$1+HPR = \frac{\text{Ending value} + \text{Income}}{\text{Beginning value}}$
 
 If an asset is purchased for ( $50 ), pays a ( $2 ) dividend, and is sold for ( $55 ), then:
 
-[
-HPR = \frac{55 + 2 - 50}{50}
-]
+$HPR = \frac{55 + 2 - 50}{50}$
 
-[
-HPR = \frac{7}{50} = 0.14 = 14%
-]
+$HPR = \frac{7}{50} = 0.14 = 14%$
 
 The gross return is:
 
-[
-1+HPR = 1.14
-]
+$1+HPR = 1.14$
 
 Holding-period returns are useful because they directly measure what happened over the investor’s actual holding period.
 
@@ -475,23 +372,15 @@ The **effective annual rate**, or EAR, is the actual annual rate earned after ac
 
 If the APR is ( r_{\text{APR}} ), and compounding occurs ( m ) times per year, then:
 
-[
-EAR = \left(1 + \frac{r_{\text{APR}}}{m}\right)^m - 1
-]
+$EAR = \left(1 + \frac{r_{\text{APR}}}{m}\right)^m - 1$
 
 For example, if the APR is 12% and interest is compounded monthly, then:
 
-[
-EAR = \left(1 + \frac{0.12}{12}\right)^{12} - 1
-]
+$EAR = \left(1 + \frac{0.12}{12}\right)^{12} - 1$
 
-[
-EAR = (1.01)^{12} - 1
-]
+$EAR = (1.01)^{12} - 1$
 
-[
-EAR \approx 0.1268 = 12.68%
-]
+$EAR \approx 0.1268 = 12.68%$
 
 So a 12% APR compounded monthly is not actually a 12% annual return. It is a 12.68% effective annual return.
 
@@ -505,82 +394,53 @@ As compounding becomes more frequent, the compounding interval becomes smaller. 
 
 If ( r_c ) is the continuously compounded annual rate, then the future value of ( PV ) after ( T ) years is:
 
-[
-FV = PV e^{r_c T}
-]
+$FV = PV e^{r_c T}$
 
 The present value of ( FV ) received ( T ) years from now is:
 
-[
-PV = FV e^{-r_c T}
-]
+$PV = FV e^{-r_c T}$
 
 The relationship between an effective annual rate ( EAR ) and a continuously compounded rate ( r_c ) is:
 
-[
-1 + EAR = e^{r_c}
-]
+$1 + EAR = e^{r_c}$
 
 Therefore:
 
-[
-r_c = \ln(1+EAR)
-]
+$r_c = \ln(1+EAR)$
 
 and:
 
-[
-EAR = e^{r_c} - 1
-]
+$EAR = e^{r_c} - 1$
 
 Example:
 
 If the effective annual rate is 10%, then the continuously compounded rate is:
 
-[
-r_c = \ln(1.10)
-]
+$r_c = \ln(1.10)$
 
-[
-r_c \approx 0.09531 = 9.531%
-]
+$r_c \approx 0.09531 = 9.531%$
 
 If the continuously compounded rate is 9.531%, then:
 
-[
-EAR = e^{0.09531} - 1 \approx 0.10 = 10%
-]
+$EAR = e^{0.09531} - 1 \approx 0.10 = 10%$
 
 Continuously compounded returns are especially useful in theory because log returns add across time.
 
 If the price of an asset changes from ( P_0 ) to ( P_1 ), the continuously compounded return is:
 
-[
-r = \ln\left(\frac{P_1}{P_0}\right)
-]
+$r = \ln\left(\frac{P_1}{P_0}\right)$
 
 If the asset then moves from ( P_1 ) to ( P_2 ), the second continuously compounded return is:
 
-[
-r_2 = \ln\left(\frac{P_2}{P_1}\right)
-]
+$r_2 = \ln\left(\frac{P_2}{P_1}\right)$
 
 The two-period continuously compounded return is:
 
-[
-\ln\left(\frac{P_2}{P_0}\right)
-]
+$\ln\left(\frac{P_2}{P_0}\right)$
 
 and:
 
-[
-\ln\left(\frac{P_2}{P_0}\right)
-===============================
-
-\ln\left(\frac{P_1}{P_0}\right)
-+
-\ln\left(\frac{P_2}{P_1}\right)
-]
+$\ln\left(\frac{P_2}{P_0}\right)= \ln\left(\frac{P_1}{P_0}\right)+\ln\left(\frac{P_2}{P_1}\right)$
 
 So log returns are time-additive.
 
@@ -594,9 +454,7 @@ Compare annual, quarterly, monthly, daily, and continuous compounding over 10 ye
 
 The general formula is:
 
-[
-FV = PV \left(1 + \frac{r}{m}\right)^{mT}
-]
+$FV = PV \left(1 + \frac{r}{m}\right)^{mT}$
 
 where:
 
@@ -607,65 +465,39 @@ where:
 
 ### Annual Compounding
 
-[
-FV = 10{,}000(1.08)^{10}
-]
+$FV = 10{,}000(1.08)^{10}$
 
-[
-FV \approx 10{,}000(2.1589)
-]
+$FV \approx 10{,}000(2.1589)$
 
-[
-FV \approx 21{,}589
-]
+$FV \approx 21{,}589$
 
 ### Quarterly Compounding
 
-[
-FV = 10{,}000\left(1+\frac{0.08}{4}\right)^{40}
-]
+$FV = 10{,}000\left(1+\frac{0.08}{4}\right)^{40}$
 
-[
-FV = 10{,}000(1.02)^{40}
-]
+$FV = 10{,}000(1.02)^{40}$
 
-[
-FV \approx 22{,}080
-]
+$FV \approx 22{,}080$
 
 ### Monthly Compounding
 
-[
-FV = 10{,}000\left(1+\frac{0.08}{12}\right)^{120}
-]
+$FV = 10{,}000\left(1+\frac{0.08}{12}\right)^{120}$
 
-[
-FV \approx 22{,}196
-]
+$FV \approx 22{,}196$
 
 ### Daily Compounding
 
-[
-FV = 10{,}000\left(1+\frac{0.08}{365}\right)^{3650}
-]
+$FV = 10{,}000\left(1+\frac{0.08}{365}\right)^{3650}$
 
-[
-FV \approx 22{,}251
-]
+$FV \approx 22{,}251$
 
 ### Continuous Compounding
 
-[
-FV = 10{,}000e^{0.08(10)}
-]
+$FV = 10{,}000e^{0.08(10)}$
 
-[
-FV = 10{,}000e^{0.8}
-]
+$FV = 10{,}000e^{0.8}$
 
-[
-FV \approx 22{,}255
-]
+$FV \approx 22{,}255$
 
 The results are:
 
@@ -701,49 +533,33 @@ Let:
 
 The exact relationship is:
 
-[
-1+i = (1+r)(1+\pi)
-]
+$1+i = (1+r)(1+\pi)$
 
 Solving for the real interest rate:
 
-[
-1+r = \frac{1+i}{1+\pi}
-]
+$1+r = \frac{1+i}{1+\pi}$
 
-[
-r = \frac{1+i}{1+\pi} - 1
-]
+$r = \frac{1+i}{1+\pi} - 1$
 
 Example:
 
 If the nominal rate is 8% and inflation is 3%, then:
 
-[
-r = \frac{1.08}{1.03} - 1
-]
+$r = \frac{1.08}{1.03} - 1$
 
-[
-r \approx 0.0485 = 4.85%
-]
+$r \approx 0.0485 = 4.85%$
 
 The approximate relationship is:
 
-[
-i \approx r + \pi
-]
+$i \approx r + \pi$
 
 So:
 
-[
-r \approx i - \pi
-]
+$r \approx i - \pi$
 
 Using the approximation:
 
-[
-r \approx 8% - 3% = 5%
-]
+$r \approx 8% - 3% = 5%$
 
 The approximation is close, but not exact.
 
@@ -755,15 +571,11 @@ The Fisher equation relates nominal interest rates, real interest rates, and exp
 
 The exact Fisher equation is:
 
-[
-1+i = (1+r)(1+\mathbb{E}[\pi])
-]
+$1+i = (1+r)(1+\mathbb{E}[\pi])$
 
 The approximate Fisher equation is:
 
-[
-i \approx r + \mathbb{E}[\pi]
-]
+$i \approx r + \mathbb{E}[\pi]$
 
 where ( \mathbb{E}[\pi] ) is expected inflation.
 
@@ -784,9 +596,7 @@ If expected inflation rises by 1 percentage point, nominal interest rates should
 
 Formally:
 
-[
 \Delta i \approx \Delta \mathbb{E}[\pi]
-]
 
 if the real rate ( r ) is constant.
 
